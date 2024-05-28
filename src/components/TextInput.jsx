@@ -1,11 +1,8 @@
-// import { useContext, useState } from "react";
-// import { TextContext } from "../context/TextContext";
 import { useDispatch } from "react-redux";
-import { onAddText } from "../redux/slices/textSlice";
+import { onAddText } from "../redux/slices/textsSlice"
 import { useState } from 'react';
 
 function TextInput() {
-  //const { onAddText } = useContext(TextContext);
   const dispatch = useDispatch();
   const [inputValue, setInputValue] = useState("");
 

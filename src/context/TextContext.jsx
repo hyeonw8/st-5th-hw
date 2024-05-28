@@ -2,7 +2,7 @@ import { createContext, useEffect, useState } from "react";
 
 export const TextContext = createContext();
 
-export const TextProvider = ({ children }) => {
+export const TextContextProvider = ({ children }) => {
   const [texts, setTexts] = useState(() =>
     localStorage.getItem("texts")
       ? JSON.parse(localStorage.getItem("texts"))
@@ -18,7 +18,7 @@ export const TextProvider = ({ children }) => {
   };
 
   return (
-    <TextContext.Provider value={{ texts, setTexts, onAddText }}>
+    <TextContext.Provider value={{ texts, onAddText }}>
       {children}
     </TextContext.Provider>
   )
