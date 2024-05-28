@@ -13,8 +13,16 @@ const textsSlice = createSlice({
     onAddText: (state, action) => {
       const nextText = action.payload;
       localStorage.setItem("texts", JSON.stringify([...state.texts, action.payload]));
+      // 😲 mutable 하게 상태 변경해보기
       state.texts.push(nextText);
+
+    // immutable way
+    // const nextText = [...state.texts, action.payload];
+    // localStorage.setItem("texts", JSON.stringify(nextText));
+    // return {...state, texts: nextText};  
     }
+    
+      
   }
 })
 
